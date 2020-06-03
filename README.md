@@ -22,15 +22,16 @@ Minikube:
 
 Luigid:
 
-- Deploy luigid: `mkctl apply -f luigid/deployment.yaml && mkctl apply -f luigid/service.yaml`
+- Deploy luigid: `kubectl apply -f luigid/deployment.yaml && kubectl apply -f luigid/service.yaml`
 - Open Luigi UI: `minikube service luigid-service`
 
 Luigi task:
 
-- Deploy as cronjob: `mkctl apply -f cronjob.yaml`
-- Run: `kubecron run luigi-example`
+- Deploy as cronjob: `kubectl apply -f cronjob.yaml`
+- Run the job once: `kubectl create job --from=cronjob/luigi-example some-run-name`
 
 
 ## Docker 
 
 Docker images used in above deployments are available in Docker Hub https://hub.docker.com/u/chhantyal
+
